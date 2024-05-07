@@ -40,4 +40,12 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     
     Route::get('profile', [\App\Http\Controllers\Admin\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');
+
+    Route::get('karyawan', [App\Http\Controllers\Karyawan\AbsensiController::class, 'index'])->name('karyawan.index');
+    Route::get('karyawan/kehadiran', [App\Http\Controllers\Karyawan\AbsensiController::class, 'show'])->name('karyawan.show');
+    Route::post('karyawan/kehadiran', [App\Http\Controllers\Karyawan\AbsensiController::class, 'store'])->name('karyawan.store');
+
+    Route::get('gaji', [App\Http\Controllers\Karyawan\GajiKaryawanController::class, 'index'])->name('gajikaryawan.index');
+    Route::get('gaji/cetak/{bulan}/{tahun}', [App\Http\Controllers\Karyawan\GajiKaryawanController::class, 'cetak'])->name('gajikaryawan.cetak');
+
 });
