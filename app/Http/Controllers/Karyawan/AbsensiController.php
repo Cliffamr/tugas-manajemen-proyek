@@ -6,6 +6,9 @@ use App\Models\Absensi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Cuti;
+use App\Models\PermintaanCuti;
+use Illuminate\Support\Facades\Auth;
 
 class AbsensiController extends Controller
 {
@@ -79,5 +82,32 @@ class AbsensiController extends Controller
             'message' => 'berhasil di edit',
             'alert-info' => 'success'
         ]);
+    }
+
+    function cuti()
+    {
+        $count = Cuti::where('nik_karyawan',  Auth()->user()->nik)->where('cuti_status', 1)->count();
+        return view('admin.karyawan.cuti', compact('count'));
+    }
+
+    function prosescuti(Request $request)
+    {
+        try {
+            $simpanCuti = Cuti::create([
+                'nama_karyawan' => Auth()->user()->nama,
+                'email_karyawan' => Auth()->user()->email,
+                'nik_karyawan' => Auth()->user()->nik,
+                'tgl_cuti' => $request->input('txtCuti'),
+                'cuti_status' => 0,
+                'created_at' =>now(),
+                'updated_at' => null
+
+            ]);
+
+            return response()->json(['status' => 200]);
+        } catch (\Throwable $th) {
+
+            return response()->json(['status' => 500, 'pesan' =>  $th->getMessage()], 500);
+        }
     }
 }

@@ -6,6 +6,7 @@ use App\Models\Absensi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Cuti;
 
 class AbsensiController extends Controller
 {
@@ -77,5 +78,24 @@ class AbsensiController extends Controller
             'message' => 'berhasil di edit',
             'alert-info' => 'success'
         ]);
+    }
+
+    function loadCuti() {
+        $loadCuti = Cuti::where('cuti_status', 0)->paginate();
+
+        return view('admin.dataCuti.index', compact('loadCuti'));
+    }
+
+    function terimaCuti(Request $request) {
+        try {
+            $update = Cuti::where('id', $request->input('id'))->update(['cuti_status' => 1]);
+            if ($update > 0) {
+               DB::commit();
+               return 'SUKSES';
+            } else return 'GAGAL';
+         } catch (\Exception $ex) {
+            DB::rollBack();
+            return $ex->getMessage();
+         }
     }
 }

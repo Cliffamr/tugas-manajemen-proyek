@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card p-4">
-                        <form action="{{ route('admin.gaji.index') }}" method="get">
+                        <form action="{{ route('admin.infogaji.index') }}" method="get">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
@@ -59,9 +59,9 @@
 
                             <button class="btn btn-primary">Filter</button>
                             @if(request()->get('bulan') === null && request()->get('tahun') === null )
-                                <a href="{{ route('admin.gaji.cetak',[ltrim(date('m'), '0'),date('Y')]) }}" class="btn btn-info"> Cetak <i class="fa fa-print"></i> </a>
+                                <a href="{{ route('admin.infogaji.cetak',[ltrim(date('m'), '0'),date('Y')]) }}" class="btn btn-info"> Cetak <i class="fa fa-print"></i> </a>
                             @else 
-                                <a href="{{ route('admin.gaji.cetak',[request()->get('bulan'),request()->get('tahun')]) }}" class="btn btn-info"> Cetak <i class="fa fa-print"></i> </a>
+                                <a href="{{ route('admin.infogaji.cetak',[request()->get('bulan'),request()->get('tahun')]) }}" class="btn btn-info"> Cetak <i class="fa fa-print"></i> </a>
                             @endif
                         </form>
                     </div>
