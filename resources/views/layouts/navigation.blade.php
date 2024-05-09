@@ -39,7 +39,14 @@
                         </p>
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a href="{{ route('admin.absensis.loadCuti') }}" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            {{ __('Pengajuan Cuti') }}
+                        </p>
+                    </a>
+                </li>
                 <!-- <li class="nav-item">
                         <i class="nav-icon far fa-address-card"></i>
                     
@@ -82,9 +89,10 @@
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
+                    
                     <ul class="nav nav-treeview" style="display: none;">
                         <li class="nav-item">
-                            <a href="{{ route('admin.gaji.index') }}" class="nav-link">
+                            <a href="{{ route('admin.infogaji.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Gaji</p>
                             </a>
@@ -136,6 +144,12 @@
                             <a href="{{ route('admin.karyawan.show') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Input Kehadiran</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.karyawan.cuti') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pengajuan Cuti</p>
                             </a>
                         </li>
                     </ul>

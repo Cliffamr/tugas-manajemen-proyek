@@ -55,6 +55,6 @@ class GajiKaryawanController extends Controller
             JOIN jabatan ON jabatan.id = users.jabatan_id
             WHERE absensi.bulan = $tanggal");
  
-        return view('admin.gaji.cetak', compact('items', 'bulan', 'tahun','potongan_alpha', 'potongan_izin'));
+        return view('admin.gajikaryawan.cetak', compact('items', 'bulan', 'tahun','potongan_alpha', 'potongan_izin'));
     }
 }
