@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_karyawan');
             $table->string('email_karyawan');
             $table->string('nik_karyawan');
+            $table->string('keterangan');
             $table->date('tgl_cuti');
             $table->boolean('cuti_status')->default(0);
             $table->rememberToken();
