@@ -97,6 +97,7 @@ class AbsensiController extends Controller
                 'nama_karyawan' => Auth()->user()->nama,
                 'email_karyawan' => Auth()->user()->email,
                 'nik_karyawan' => Auth()->user()->nik,
+                'keterangan' => $request->input('txtKeterangan'),
                 'tgl_cuti' => $request->input('txtCuti'),
                 'cuti_status' => 0,
                 'created_at' =>now(),

@@ -29,7 +29,28 @@
                             Masukan Tanggal Anda Ingin Melakukan Cuti
                         </label>
                         <br>
+                        <table>
+                            <tr>
+                                <td><b>Keterangan Pengajuan Cuti</b></td>
+                                <td>:</td>
+                                <td><input type="text" name="txtKeterangan" id="txtKeterangan" style="width: 300px;" /></td>
+                            </tr>
+                            <tr>
+                                <td><b>Tanggal Pengajuan Cuti</b></td>
+                                <td>:</td>
+                                <td><input type="date" name="txtCuti" id="txtCuti" style="width: 300px;text-align: center;" /></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <!-- <label>
+                            Keterangan Pengajuan Cuti :
+                        </label>
                         <input type="date" name="txtCuti" id="txtCuti" style="width: 300px;text-align: center;" />
+                        <br>
+                        <label>
+                            Tanggal Pengajuan Cuti :
+                        </label>
+                        <input type="date" name="txtCuti" id="txtCuti" style="width: 300px;text-align: center;" /> -->
                         <button type="button" onclick="actionSimpan()" class="btn btn-primary">Simpan</button>
                     </form>
                 </div>

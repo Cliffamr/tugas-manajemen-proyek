@@ -29,6 +29,7 @@
                                         <th>Email</th>
                                         <th>Nik</th>
                                         <th>Tanggal Pengajuan Cuti</th>
+                                        <th>Keterangan Pengajuan Cuti</th>
                                         <th>Verifikasi</th>
                                     </tr>
                                 </thead>
@@ -39,6 +40,7 @@
                                         <td>{{ $data->email_karyawan }}</td>
                                         <td>{{ $data->nik_karyawan }}</td>
                                         <td>{{ date("d-m-Y", strtotime($data->tgl_cuti)) }}</td>
+                                        <td>{{ $data->keterangan }}</td>
                                         <td>
                                             <button type="button" class="btn-sm btn-success" id="btn-update-verifikasi" onclick="onVerif('{{$data->id}}')"><i class="fa fa-check"></i></button>
                                         </td>
