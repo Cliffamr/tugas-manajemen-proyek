@@ -98,4 +98,17 @@ class AbsensiController extends Controller
             return $ex->getMessage();
          }
     }
+
+    function batalCuti(Request $request) {
+        try {
+            $update = Cuti::where('id', $request->input('id'))->update(['cuti_status' => 1, 'alasan_ditolak' => $request->alasan]);
+            if ($update > 0) {
+               DB::commit();
+               return 'SUKSES';
+            } else return 'GAGAL';
+         } catch (\Exception $ex) {
+            DB::rollBack();
+            return $ex->getMessage();
+         }
+    }
 }
