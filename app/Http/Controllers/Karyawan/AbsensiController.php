@@ -86,8 +86,9 @@ class AbsensiController extends Controller
 
     function cuti()
     {
-        $count = Cuti::where('nik_karyawan',  Auth()->user()->nik)->where('cuti_status', 1)->count();
-        return view('admin.karyawan.cuti', compact('count'));
+        $count = Cuti::where('nik_karyawan',  Auth()->user()->nik)->where('cuti_status', 1)->where('alasan_ditolak', null)->count();
+        $loadCuti = Cuti::where('nik_karyawan',  Auth()->user()->nik)->where('cuti_status', 1)->whereNotNull('alasan_ditolak')->get();
+        return view('admin.karyawan.cuti', compact('count','loadCuti'));
     }
 
     function prosescuti(Request $request)

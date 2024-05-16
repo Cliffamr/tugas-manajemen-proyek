@@ -67,12 +67,12 @@
                                 <p>Data Absensi</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="{{ route('admin.absensis.show') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Input Kehadiran</p>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a href="{{ route('admin.potongan-gaji.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>

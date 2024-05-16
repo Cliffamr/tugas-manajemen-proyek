@@ -32,6 +32,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
         
         Route::get('loadCuti', [App\Http\Controllers\Admin\AbsensiController::class, 'loadCuti'])->name('absensis.loadCuti');
         Route::post('absensis/terimaCuti', [App\Http\Controllers\Admin\AbsensiController::class, 'terimaCuti'])->name('absensis.terimaCuti');
+        Route::post('absensis/batalCuti', [App\Http\Controllers\Admin\AbsensiController::class, 'batalCuti'])->name('absensis.batalCuti');
        
        Route::get('infogaji', [App\Http\Controllers\Admin\InfoGajiController::class, 'index'])->name('infogaji.index');
         Route::get('infogaji/cetak/{bulan}/{tahun}', [App\Http\Controllers\Admin\InfoGajiController::class, 'cetak'])->name('infogaji.cetak');

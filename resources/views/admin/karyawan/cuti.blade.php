@@ -56,6 +56,49 @@
                 </div>
             </div>
         </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body p-0">
+
+                        <div class="table-responsive">
+                            <label>&nbsp;Data Cuti Yang Ditolak</label>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>Nik</th>
+                                        <th>Tanggal Pengajuan Cuti</th>
+                                        <th>Keterangan Pengajuan Cuti</th>
+                                        <th>Alasan Ditolak</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($loadCuti as $data)
+                                    <tr>
+                                        <td>{{ $data->nama_karyawan }}</td>
+                                        <td>{{ $data->email_karyawan }}</td>
+                                        <td>{{ $data->nik_karyawan }}</td>
+                                        <td>{{ date("d-m-Y", strtotime($data->tgl_cuti)) }}</td>
+                                        <td>{{ $data->keterangan }}</td>
+                                        <td>
+                                            {{ $data->alasan_ditolak }}
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+
+
+                </div>
+
+            </div>
+        </div>
         <!-- /.row -->
     </div><!-- /.container-fluid -->
 </div>
