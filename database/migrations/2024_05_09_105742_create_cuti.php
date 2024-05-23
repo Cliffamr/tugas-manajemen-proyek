@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email_karyawan');
             $table->string('nik_karyawan');
             $table->string('keterangan');
-            $table->string('alasan_ditolak');
+            $table->string('alasan_ditolak')->nullable();
             $table->date('tgl_cuti');
             $table->boolean('cuti_status')->default(0);
             $table->rememberToken();
