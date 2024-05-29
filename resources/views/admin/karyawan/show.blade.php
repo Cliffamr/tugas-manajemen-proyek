@@ -23,7 +23,7 @@
                             <option value="">-Pilih-</option>
                             <option value="Hadir">Hadir</option>
                             <option value="Sakit">Sakit</option>
-                            <option value="Alpha">Alpha</option>
+                            {{-- <option value="Alpha">Alpha</option> --}}
                         </select>
                     </div>
                 </div>
